@@ -18,6 +18,11 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.diceroller.ui.theme.DiceRollerTheme
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,6 +58,11 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier){
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Image(
+            painter = painterResource(R.drawable.dice_1),
+            contentDescription = "1"
+        )
+        Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { /* ToDo */}) {
             Text(stringResource(R.string.roll))
         }
